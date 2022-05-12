@@ -109,6 +109,11 @@
                             <constraint firstItem="W7U-5U-gTd" firstAttribute="top" secondItem="An9-QJ-65E" secondAttribute="bottom" constant="50" id="mjU-WU-Dos"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateTF" destination="gz9-ef-fLq" id="Xsq-xr-NsJ"/>
+                        <outlet property="monthTF" destination="MtG-Dn-Nzd" id="nSI-Ql-F4w"/>
+                        <outlet property="yearTF" destination="Vtf-nA-uWo" id="ket-Et-uyB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
