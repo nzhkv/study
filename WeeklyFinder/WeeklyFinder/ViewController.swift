@@ -18,18 +18,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     
     @IBAction func findDay(_ sender: Any) {
+        guard let day = dateTF.text, let month = monthTF.text, let year = yearTF.text else {
+            return resultLabel.text = "Insert correct date"
+        }
+        
         let calendar = Calendar.current
         var dateComponents = DateComponents()
-        dateComponents.day = Int(dateTF.text!)
-        dateComponents.month = Int(monthTF.text!)
-        dateComponents.year = Int(yearTF.text!)
+        dateComponents.day = Int(day)
+        dateComponents.month = Int(month)
+        dateComponents.year = Int(year)
         
         let dateFormater = DateFormatter()
         dateFormater.dateFormat = "EEEE"
         
-        let date = calendar.date(from: dateComponents)
+        guard let date = calendar.date(from: dateComponents) else {
+            return
+        }
         
-        let weekday = dateFormater.string(from: date!)
+        let weekday = dateFormater.string(from: date)
         
         resultLabel.text = weekday
     }
