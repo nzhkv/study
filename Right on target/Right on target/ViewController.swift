@@ -14,26 +14,22 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        print("viewDidLoad")
+        // генерируем случайное число
+        self.number = Int.random(in: 1...50)
+        // устанавливаем загаданное число в метку
+        self.label.text = String(self.number)
     }
     
     // загаданное число
     var number: Int = 0
     // раунд
-    var round: Int = 0
+    var round: Int = 1
     // сумма очков за раунд
     var points: Int = 0
     
     @IBAction func checkNumber() {
-        // если игра только начинается
-        if self.round == 0 {
-            // генерируем случайное число
-            self.number = Int.random(in: 1...50)
-            // передаем значение случайного числа в label
-            self.label.text = String(self.number)
-            // устанавливаем счетчик раундов на 1
-            self.round = 1
-        } else {
+ 
             // получаем значение на слайдере
             let numSlider = Int(self.slader.value.rounded())
             // сравниваем значение с загаданным
@@ -65,4 +61,3 @@ class ViewController: UIViewController {
         }
     }
     
-}
