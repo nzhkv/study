@@ -9,6 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    override func loadView() {
+        super.loadView()
+        print("loadView")
+
+    }
+    
     @IBOutlet var slader: UISlider!
     @IBOutlet var label: UILabel!
     
