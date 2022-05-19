@@ -1,81 +1,62 @@
-//
-//  ViewController.swift
-//  Right on target
-//
-//  Created by Nikolay Zhukov on 13.05.2022.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
     
-    override func loadView() {
-        super.loadView()
-        print("loadView")
-
-    }
+    // Сущность "Игра"
+    var game: Game!
     
-    @IBOutlet var slader: UISlider!
+    // Элементы на сцене
+    @IBOutlet var slider: UISlider!
     @IBOutlet var label: UILabel!
     
+    // MARK: - Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad")
-        // генерируем случайное число
-        self.number = Int.random(in: 1...50)
-        // устанавливаем загаданное число в метку
-        self.label.text = String(self.number)
+        // Создаем генератор случайных чисел
+        let generator = NumberGenerator(startValue: 1, endValue: 50)!
+        // Создаем сущность игра
+        game = Game(valueGenerator: generator, rounds: 5)
+        // Обновляем данные о текущем значении загаданного числа
+        updateLabelWithSecretNumber(newText: String(game.currentRound.currentSecretValue))
     }
     
-    // загаданное число
-    var number: Int = 0
-    // раунд
-    var round: Int = 1
-    // сумма очков за раунд
-    var points: Int = 0
+    // MARK: - Взаимодействие View - Model
     
+    // Проверка выбранного пользователем числа
     @IBAction func checkNumber() {
- 
-            // получаем значение на слайдере
-            let numSlider = Int(self.slader.value.rounded())
-            // сравниваем значение с загаданным
-            // и подсчитываем очки
-            if numSlider > self.number {
-                self.points += 50 - numSlider + self.number } else if numSlider < self.number {
-                    self.points += 50 - self.number + numSlider
-                    
-                } else {
-                    self.points += 50 }
-            if self.round == 5
-            {
-                // выводим информационное окно // с результатами игры
-                let alert = UIAlertController(
-                    title: "Игра окончена",
-                    message: "Вы заработали \(self.points) очков", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Начать заново", style: .default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-                self.round = 1
-                self.points = 0
-            } else {
-                self.round += 1
-            }
-            // генерируем случайное число
-            self.number = Int.random(in: 1...50)
-            
-            // передаем значение случайного числа в label
-            self.label.text = String(self.number)
+        // Высчитываем очки за раунд
+        game.currentRound.calculateScore(with: Int(slider.value))
+        // Проверяем, окончена ли игра
+        if game.isGameEnded {
+            // Показываем окно с итогами
+            showAlertWith(score: game.score)
+            // Рестартуем игру
+            game.restartGame()
+        } else {
+            // Начинаем новый раунд игры
+            game.startNewRound()
         }
-    
-    lazy var secondViewController: SecondViewController = getSecondViewController()
-    
-    private func getSecondViewController() -> SecondViewController {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(identifier: "SecondViewController")
-        return viewController as! SecondViewController
+        // Обновляем данные о текущем значении загаданного числа
+        updateLabelWithSecretNumber(newText: String(game.currentRound.currentSecretValue))
     }
     
-   
+    // MARK: - Обновление View
     
-    
+    // Обновление текста загаданного числа
+    func updateLabelWithSecretNumber(newText: String ) {
+        label.text = newText
     }
     
+    // Отображение всплывающего окна со счетом
+    private func showAlertWith( score: Int ) {
+        let alert = UIAlertController(
+                        title: "Игра окончена",
+                        message: "Вы заработали \(score) очков",
+                        preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Начать заново", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+
+
+
+}
