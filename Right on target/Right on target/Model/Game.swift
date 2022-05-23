@@ -63,6 +63,14 @@ class Game: GameProtocol {
             score += 50 - currentSecretValue + value
         } else {
             score += 50
+        if value > currentRound {
+            score += 50 - value + currentSecretValue
+            print(score)
+        } else if value < currentSecretValue {
+            score += 50 - currentSecretValue + value
+            print(score)
+        } else {
+            score += 50
         }
     }
 }
