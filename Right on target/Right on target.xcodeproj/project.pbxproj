@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E39E77B283B9CB600F8FA85 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E39E77A283B9CB600F8FA85 /* Generator.swift */; };
-		2E39E77D283BB04500F8FA85 /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E39E77C283BB04500F8FA85 /* Round.swift */; };
 		2E5F4773282EA3F900634B75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F4772282EA3F900634B75 /* AppDelegate.swift */; };
 		2E5F4775282EA3F900634B75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F4774282EA3F900634B75 /* SceneDelegate.swift */; };
 		2E5F4777282EA3F900634B75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F4776282EA3F900634B75 /* ViewController.swift */; };
@@ -19,8 +17,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2E39E77A283B9CB600F8FA85 /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
-		2E39E77C283BB04500F8FA85 /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
 		2E5F476F282EA3F900634B75 /* Right on target.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Right on target.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E5F4772282EA3F900634B75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E5F4774282EA3F900634B75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,8 +74,6 @@
 			isa = PBXGroup;
 			children = (
 				2EE2D3BC28356C8E0088FA4D /* Game.swift */,
-				2E39E77A283B9CB600F8FA85 /* Generator.swift */,
-				2E39E77C283BB04500F8FA85 /* Round.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -159,8 +153,6 @@
 				2E5F4777282EA3F900634B75 /* ViewController.swift in Sources */,
 				2E5F4773282EA3F900634B75 /* AppDelegate.swift in Sources */,
 				2E5F4775282EA3F900634B75 /* SceneDelegate.swift in Sources */,
-				2E39E77D283BB04500F8FA85 /* Round.swift in Sources */,
-				2E39E77B283B9CB600F8FA85 /* Generator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
