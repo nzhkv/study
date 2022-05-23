@@ -16,13 +16,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        game = Game(startValue: 1, endValue: 50, rounds: 5)
-        updateLabelWithSecretNumber(newText: String(game.currentSecretValue))
+        let generator = NumberGenerator(startValue: 1, endValue: 50)
+        game = Game(valueGenerator: generator!, rounds: 5)
+        updateLabelWithSecretNumber(newText: String(game.currentRound.currentSecretValue))
     }
     
     @IBAction func checkNumber() {
         
-        game.calculateScore(with: Int(slader.value))
+        game.currentRound.calculateScore(with: Int(slader.value))
         
         if game.isGameEnded {
             showAlertWith(score: game.score)
@@ -31,10 +32,10 @@ class ViewController: UIViewController {
             game.startNewRound()
         }
         
-        updateLabelWithSecretNumber(newText: String(game.currentSecretValue))
+        updateLabelWithSecretNumber(newText: String(game.currentRound.currentSecretValue))
     }
     
-    private func updateLabelWithSecretNumber(newText: String) {
+    func updateLabelWithSecretNumber(newText: String) {
         label.text = newText
     }
     

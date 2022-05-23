@@ -14,6 +14,8 @@
 		2E5F477C282EA3FA00634B75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E5F477B282EA3FA00634B75 /* Assets.xcassets */; };
 		2E5F477F282EA3FA00634B75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E5F477D282EA3FA00634B75 /* LaunchScreen.storyboard */; };
 		2EE2D3BD28356C8F0088FA4D /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE2D3BC28356C8E0088FA4D /* Game.swift */; };
+		2EF53B60283BCD8800C9E85C /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF53B5F283BCD8800C9E85C /* Generator.swift */; };
+		2EF53B62283BCF5100C9E85C /* GameRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF53B61283BCF5100C9E85C /* GameRound.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		2E5F477E282EA3FA00634B75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E5F4780282EA3FA00634B75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2EE2D3BC28356C8E0088FA4D /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		2EF53B5F283BCD8800C9E85C /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
+		2EF53B61283BCF5100C9E85C /* GameRound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRound.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				2EE2D3BC28356C8E0088FA4D /* Game.swift */,
+				2EF53B5F283BCD8800C9E85C /* Generator.swift */,
+				2EF53B61283BCF5100C9E85C /* GameRound.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -153,6 +159,8 @@
 				2E5F4777282EA3F900634B75 /* ViewController.swift in Sources */,
 				2E5F4773282EA3F900634B75 /* AppDelegate.swift in Sources */,
 				2E5F4775282EA3F900634B75 /* SceneDelegate.swift in Sources */,
+				2EF53B62283BCF5100C9E85C /* GameRound.swift in Sources */,
+				2EF53B60283BCD8800C9E85C /* Generator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
