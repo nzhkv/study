@@ -17,26 +17,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="AiC-57-vFb">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="mHg-4a-2xb"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="uys-hn-1yi"/>
                                 </connections>
                             </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZc-qJ-oWy">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ZKF-tM-bFj"/>
+                                    <barButtonItem title="Создать контакт" id="3E9-kX-FcY"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="AiC-57-vFb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ITv-6Q-lfY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AiC-57-vFb" secondAttribute="trailing" id="Ybs-fz-cZL"/>
-                            <constraint firstItem="AiC-57-vFb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jaH-GY-NA7"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AiC-57-vFb" secondAttribute="bottom" id="okh-SE-AN8"/>
+                            <constraint firstItem="OZc-qJ-oWy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AuY-PC-uZb"/>
+                            <constraint firstItem="OZc-qJ-oWy" firstAttribute="top" secondItem="AiC-57-vFb" secondAttribute="bottom" id="Eo9-dL-EyB"/>
+                            <constraint firstItem="AiC-57-vFb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Sf0-gZ-jEz"/>
+                            <constraint firstItem="OZc-qJ-oWy" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="YRx-4i-MHQ"/>
+                            <constraint firstItem="AiC-57-vFb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="a6z-vR-AY4"/>
+                            <constraint firstItem="OZc-qJ-oWy" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="gg1-VK-pbi"/>
+                            <constraint firstItem="AiC-57-vFb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kei-Lv-zd2"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="71"/>
+            <point key="canvasLocation" x="18.840579710144929" y="70.982142857142847"/>
         </scene>
     </scenes>
     <resources>

@@ -13,9 +13,9 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-   
+        
         var cell: UITableViewCell
-
+        
         if let reuseCell = tableView.dequeueReusableCell(withIdentifier: "MyCell") {
             print("используем старую ячейку с индексом \(indexPath.row)")
             cell = reuseCell
@@ -23,7 +23,7 @@ extension ViewController: UITableViewDataSource {
             print("создаем новую ячейку с индексом \(indexPath.row)")
             cell = UITableViewCell(style: .default, reuseIdentifier: "MyCell")
         }
-
+        
         configure(cell: &cell, for: indexPath)
         return cell
     }
@@ -36,6 +36,16 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let actionDelete = UIContextualAction(style: .destructive, title: "Удалить") { _, _, _ in
+            self.contacts.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+        let actions = UISwipeActionsConfiguration(actions: [actionDelete])
+        return actions
+    }
+}
 
 
 class ViewController: UIViewController {
