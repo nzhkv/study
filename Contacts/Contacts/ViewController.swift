@@ -50,18 +50,51 @@ extension ViewController: UITableViewDelegate {
 
 class ViewController: UIViewController {
     
+    @IBOutlet var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadContacts()
     }
     
-    private var contacts = [ContactProtocol]()
+    private var contacts: [ContactProtocol] = [] {
+        didSet {
+            contacts.sort { $0.title < $1.title}
+        }
+    }
     
     private func loadContacts() {
         contacts.append(Contact(title: "Саня", phone: "+79281213456"))
         contacts.append(Contact(title: "Ваня", phone: "+79288363419"))
         contacts.append(Contact(title: "Игорек", phone: "+79183755907"))
-        contacts.sort{ $0.title < $1.title}
+    }
+    
+    @IBAction func showNewContactAlert() {
+        let alertController = UIAlertController(title: "Создайте новый контакт", message: "Введите имя и телефон", preferredStyle: .alert)
+        
+        alertController.addTextField {textField in
+            textField.placeholder = "Имя"
+        }
+
+        alertController.addTextField {textField in
+            textField.placeholder = "Номер телефона"
+        }
+        
+        let createButton = UIAlertAction(title: "Cоздать", style: .default) { _ in
+            guard let contactName = alertController.textFields?[0].text,
+                  let contactPhone = alertController.textFields?[1].text else { return }
+           
+            let contact = Contact(title: contactName, phone: contactPhone)
+            self.contacts.append(contact)
+            self.tableView.reloadData()
+        }
+        
+        let cancelButton = UIAlertAction(title: "Отменить", style: .cancel, handler: nil)
+        
+        alertController.addAction(createButton)
+        alertController.addAction(cancelButton)
+        
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 
