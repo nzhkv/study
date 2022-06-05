@@ -52,9 +52,14 @@ class ViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
+    var userDefaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadContacts()
+
+        print(userDefaults.object(forKey: "Some key"))
+        print(userDefaults.string(forKey: "Some key"))
     }
     
     private var contacts: [ContactProtocol] = [] {
