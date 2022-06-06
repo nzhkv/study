@@ -17,10 +17,8 @@ extension ViewController: UITableViewDataSource {
         var cell: UITableViewCell
         
         if let reuseCell = tableView.dequeueReusableCell(withIdentifier: "MyCell") {
-            print("используем старую ячейку с индексом \(indexPath.row)")
             cell = reuseCell
         } else {
-            print("создаем новую ячейку с индексом \(indexPath.row)")
             cell = UITableViewCell(style: .default, reuseIdentifier: "MyCell")
         }
         
@@ -52,26 +50,23 @@ class ViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
-    var userDefaults = UserDefaults.standard
+    var storage: ContactStorageProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        storage = ContactStorage()
         loadContacts()
-
-        print(userDefaults.object(forKey: "Some key"))
-        print(userDefaults.string(forKey: "Some key"))
     }
     
     private var contacts: [ContactProtocol] = [] {
         didSet {
             contacts.sort { $0.title < $1.title}
+            storage.save(contacts: contacts)
         }
     }
     
     private func loadContacts() {
-        contacts.append(Contact(title: "Саня", phone: "+79281213456"))
-        contacts.append(Contact(title: "Ваня", phone: "+79288363419"))
-        contacts.append(Contact(title: "Игорек", phone: "+79183755907"))
+        contacts = storage.load()
     }
     
     @IBAction func showNewContactAlert() {
