@@ -83,21 +83,44 @@
             </objects>
             <point key="canvasLocation" x="24.800000000000001" y="83.497536945812811"/>
         </scene>
-        <!--View Controller-->
+        <!--Вопрос №-->
         <scene sceneID="sFS-2z-vD0">
             <objects>
-                <viewController id="bN5-m2-8Pt" sceneMemberID="viewController">
+                <viewController id="bN5-m2-8Pt" customClass="QuestionViewController" customModule="AnimalQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kqX-ay-KGx" customClass="QuestionViewController">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="V2T-Y3-P7U"/>
                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                     </view>
-                    <navigationItem key="navigationItem" id="9ws-ah-nDl"/>
+                    <navigationItem key="navigationItem" title="Вопрос №" id="9ws-ah-nDl">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="Acl-UP-y9c"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="T0p-sf-zJG" kind="show" identifier="showResult" id="CGa-o7-NZz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8T2-tz-Ebc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1604" y="83"/>
+            <point key="canvasLocation" x="1484" y="83"/>
+        </scene>
+        <!--Результаты-->
+        <scene sceneID="tMI-qI-dyy">
+            <objects>
+                <viewController id="T0p-sf-zJG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DSY-Hk-fzP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="FuP-rb-yBF"/>
+                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Результаты" id="xie-dS-hCD">
+                        <barButtonItem key="rightBarButtonItem" title="Готово" id="WaR-aN-emA"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0oB-kv-mjD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2286" y="83"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zsI-of-Kw4">
@@ -115,7 +138,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MzL-hH-sPj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="813.60000000000002" y="82.758620689655174"/>
+            <point key="canvasLocation" x="746" y="83"/>
         </scene>
     </scenes>
     <resources>
