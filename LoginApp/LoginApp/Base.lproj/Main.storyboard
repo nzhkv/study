@@ -97,20 +97,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dza-5g-scU">
-                                <rect key="frame" x="154" y="531" width="67" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dza-5g-scU">
+                                <rect key="frame" x="158" y="542" width="59" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Выйти">
                                     <color key="titleColor" systemColor="systemGroupedBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="exitButton:" destination="1CG-SE-sNA" eventType="touchUpInside" id="xcn-Dp-NXS"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mia-eG-FpP">
+                                <rect key="frame" x="140.5" y="100" width="94" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QQN-XU-DvE"/>
                         <color key="backgroundColor" systemColor="systemMintColor"/>
+                        <constraints>
+                            <constraint firstItem="mia-eG-FpP" firstAttribute="centerX" secondItem="eS2-Th-efp" secondAttribute="centerX" id="0rc-9y-a1w"/>
+                            <constraint firstItem="dza-5g-scU" firstAttribute="centerX" secondItem="eS2-Th-efp" secondAttribute="centerX" id="1An-qb-GbZ"/>
+                            <constraint firstItem="mia-eG-FpP" firstAttribute="top" secondItem="QQN-XU-DvE" secondAttribute="top" constant="100" id="8Uw-x9-BOP"/>
+                            <constraint firstItem="QQN-XU-DvE" firstAttribute="bottom" secondItem="dza-5g-scU" secondAttribute="bottom" constant="20" id="d3s-Za-sVH"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Uk1-gb-M6M"/>
+                    <connections>
+                        <outlet property="welcomeText" destination="mia-eG-FpP" id="5NQ-dR-nvJ"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1599" y="-289"/>
