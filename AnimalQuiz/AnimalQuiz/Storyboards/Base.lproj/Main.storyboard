@@ -90,8 +90,58 @@
                     <view key="view" contentMode="scaleToFill" id="kqX-ay-KGx" customClass="QuestionViewController">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Mtc-Ly-dMB">
+                                <rect key="frame" x="16" y="140" width="343" height="4"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z08-jC-9eD">
+                                <rect key="frame" x="16" y="160" width="343" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="DWj-Zw-gmz">
+                                <rect key="frame" x="158" y="296.66666666666669" width="59" height="219.00000000000006"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOQ-dw-zfl">
+                                        <rect key="frame" x="0.0" y="0.0" width="59" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0i-I6-Yhh">
+                                        <rect key="frame" x="0.0" y="61" width="59" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qM2-Ud-xvp">
+                                        <rect key="frame" x="0.0" y="122" width="59" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dt5-m4-Na0">
+                                        <rect key="frame" x="0.0" y="183" width="59" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="V2T-Y3-P7U"/>
                         <color key="backgroundColor" systemColor="systemGray4Color"/>
+                        <constraints>
+                            <constraint firstItem="V2T-Y3-P7U" firstAttribute="trailing" secondItem="Mtc-Ly-dMB" secondAttribute="trailing" constant="16" id="4jU-wF-TiD"/>
+                            <constraint firstItem="V2T-Y3-P7U" firstAttribute="trailing" secondItem="Z08-jC-9eD" secondAttribute="trailing" constant="16" id="8Mh-Rh-2s5"/>
+                            <constraint firstItem="Z08-jC-9eD" firstAttribute="leading" secondItem="V2T-Y3-P7U" secondAttribute="leading" constant="16" id="IwN-oV-2uM"/>
+                            <constraint firstItem="DWj-Zw-gmz" firstAttribute="centerX" secondItem="kqX-ay-KGx" secondAttribute="centerX" id="JK8-Do-WEM"/>
+                            <constraint firstItem="DWj-Zw-gmz" firstAttribute="centerY" secondItem="kqX-ay-KGx" secondAttribute="centerY" id="QLb-aj-ebI"/>
+                            <constraint firstItem="Mtc-Ly-dMB" firstAttribute="top" secondItem="V2T-Y3-P7U" secondAttribute="top" id="Sb1-yb-nfP"/>
+                            <constraint firstItem="Mtc-Ly-dMB" firstAttribute="leading" secondItem="V2T-Y3-P7U" secondAttribute="leading" constant="16" id="UJg-wK-yVb"/>
+                            <constraint firstItem="Z08-jC-9eD" firstAttribute="top" secondItem="Mtc-Ly-dMB" secondAttribute="bottom" constant="16" id="etx-qG-X0A"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Вопрос №" id="9ws-ah-nDl">
                         <barButtonItem key="backBarButtonItem" title="Назад" id="Acl-UP-y9c"/>
