@@ -1,2 +1,3 @@
 # study
-my study code
+my simple app
+create for swift practice
